@@ -1,0 +1,25 @@
+name: Docker CI
+
+# Permite correr o workflow manualmente a partir do separador Actions
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Tipo de runner (máquina) que o GitHub vai usar
+    runs-on: ubuntu-latest
+
+    steps:
+      # Faz checkout do código deste repositório
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Exemplo de comando simples (uma linha)
+      - name: Run a one-line script
+        run: echo "Hello, World!"
+
+      # Exemplo de vários comandos (multi-linha)
+      - name: Run a multi-line script
+        run: |
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
